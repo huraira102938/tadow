@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState, type FormEvent } from "react";
+import { toast } from "sonner";
 import { ArrowRight, Sparkles, Zap, ShoppingBag, Star, Search, ShieldCheck, Heart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import heroPhone from "@/assets/hero-phone.jpg";
@@ -42,6 +44,22 @@ const steps = [
 
 
 function Home() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleNotify(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const value = email.trim();
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= 255;
+    if (!valid) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    setSubmitted(true);
+    setEmail("");
+    toast.success("You're on the list! We'll let you know when Tadow launches. 🎉");
+  }
+
   return (
     <Layout>
       {/* Hero */}
@@ -215,16 +233,24 @@ function Home() {
             <p className="mt-4 text-base text-background/70">
               Be the first to try Tadow when we launch. No spam, just one calm announcement.
             </p>
-            <div className="mt-8 flex max-w-md items-center gap-2 rounded-full border border-background/20 bg-background/10 p-1.5 backdrop-blur">
+            <form onSubmit={handleNotify} className="mt-8 flex w-full max-w-md flex-col gap-2 rounded-3xl border border-background/20 bg-background/10 p-1.5 backdrop-blur sm:flex-row sm:items-center sm:rounded-full">
               <input
                 type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={255}
                 placeholder="you@somewhere.com"
-                className="flex-1 bg-transparent px-4 py-2 text-sm text-background placeholder:text-background/50 focus:outline-none"
+                aria-label="Email address"
+                className="min-w-0 flex-1 rounded-full bg-transparent px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none"
               />
-              <button className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5">
-                Notify me
+              <button
+                type="submit"
+                className="shrink-0 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+              >
+                {submitted ? "Thanks!" : "Notify me"}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
