@@ -49,7 +49,7 @@ const big = [
 const small = [
   { icon: Truck, title: "Live order tracking", desc: "Watch packages move from shelf to step." },
   { icon: Bell, title: "Smart restock alerts", desc: "Get pinged the moment your size drops." },
-  { icon: Sparkles, title: "Wishlist sharing", desc: "Save what you love and share it with the people who matter." },
+  { icon: Sparkles, title: "Made with care", desc: "Every detail is crafted to make shopping feel calm and joyful." },
 ];
 
 function FeaturesPage() {
