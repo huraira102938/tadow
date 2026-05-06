@@ -40,11 +40,6 @@ const steps = [
   { n: "04", title: "Track & enjoy", desc: "Live order tracking from warehouse to your door." },
 ];
 
-const testimonials = [
-  { name: "Aarav S.", role: "Early tester", quote: "Feels like the team obsessed over every tap. I'm not going back to my old apps." },
-  { name: "Mira K.", role: "Designer", quote: "Beautiful, fast, and weirdly calming. Shopping shouldn't feel this good." },
-  { name: "Jonas P.", role: "Beta user", quote: "The recommendations are uncanny — in the best way possible." },
-];
 
 function Home() {
   return (
@@ -130,7 +125,7 @@ function Home() {
             <div className="marquee flex shrink-0 gap-12 whitespace-nowrap pr-12 text-sm uppercase tracking-[0.3em] text-muted-foreground">
               {Array.from({ length: 2 }).map((_, k) => (
                 <div key={k} className="flex gap-12">
-                  {["Curated daily", "Tap to buy", "Free returns", "AI recommendations", "Verified sellers", "Worldwide shipping"].map(t => (
+                  {["Curated daily", "Tap to buy", "Built for you", "Made simple", "Verified sellers", "Shop with joy"].map(t => (
                     <span key={t}>✦ {t}</span>
                   ))}
                 </div>
@@ -205,29 +200,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-card/40 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-14 max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Early voices</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">Loved before launch.</h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="rounded-3xl border border-border bg-card p-7 shadow-card">
-                <div className="mb-4 flex gap-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-primary text-primary" />)}
-                </div>
-                <blockquote className="font-display text-lg leading-snug">"{t.quote}"</blockquote>
-                <figcaption className="mt-6 text-sm">
-                  <span className="font-semibold">{t.name}</span>
-                  <span className="text-muted-foreground"> · {t.role}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials section removed */}
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-24">

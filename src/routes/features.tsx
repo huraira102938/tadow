@@ -20,22 +20,22 @@ const big = [
     icon: Search,
     eyebrow: "Discover",
     title: "Smart product discovery",
-    desc: "Tadow learns what you love and surfaces it before you have to search. Visual search, mood boards and weekly drops keep your feed feeling fresh — never noisy.",
-    bullets: ["Visual search by photo", "Curated daily drops", "Mood-based collections"],
+    desc: "Tadow learns what you love and surfaces it before you have to search. A feed that feels fresh every time you open the app — never noisy.",
+    bullets: ["Effortless search", "Fresh picks every visit", "Less clutter, more clarity"],
   },
   {
     icon: CreditCard,
     eyebrow: "Checkout",
     title: "Easy checkout experience",
-    desc: "One tap. Saved cards, addresses and preferences make checkout feel like an afterthought — exactly how it should.",
-    bullets: ["1-tap purchase", "Apple & Google Pay", "Split payments"],
+    desc: "A simple, calm checkout flow designed to get you from cart to confirmation without friction.",
+    bullets: ["Quick and simple", "Clear at every step", "Built for everyday use"],
   },
   {
     icon: Sparkles,
     eyebrow: "Personal",
-    title: "Personalized recommendations",
-    desc: "An on-device taste model means your recommendations stay sharp — and your data stays yours.",
-    bullets: ["Privacy-first AI", "Style fingerprint", "Cross-category suggestions"],
+    title: "Made for your taste",
+    desc: "Tadow adapts to what you actually like, so the app feels a little more yours every time you use it.",
+    bullets: ["Feels personal", "Stays relevant", "Always evolving"],
   },
   {
     icon: Lock,
@@ -49,7 +49,7 @@ const big = [
 const small = [
   { icon: Truck, title: "Live order tracking", desc: "Watch packages move from shelf to step." },
   { icon: Bell, title: "Smart restock alerts", desc: "Get pinged the moment your size drops." },
-  { icon: Sparkles, title: "Wishlist sharing", desc: "Send polished wish boards to friends." },
+  { icon: Sparkles, title: "Wishlist sharing", desc: "Save what you love and share it with the people who matter." },
 ];
 
 function FeaturesPage() {

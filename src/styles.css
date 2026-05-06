@@ -60,9 +60,9 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.03 260);
 
-  --primary: oklch(0.68 0.20 32);          /* Coral */
+  --primary: oklch(0.66 0.23 33);          /* Tadow vivid orange */
   --primary-foreground: oklch(0.99 0 0);
-  --primary-glow: oklch(0.78 0.16 50);     /* Warm peach */
+  --primary-glow: oklch(0.76 0.18 45);     /* Warm peach */
 
   --secondary: oklch(0.96 0.015 70);
   --secondary-foreground: oklch(0.22 0.03 260);

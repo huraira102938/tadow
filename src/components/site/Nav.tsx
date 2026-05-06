@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/tadow-logo.png";
+import logo from "@/assets/tadow-logo.jpg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -12,7 +12,7 @@ export function Nav() {
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Tadow logo" width={32} height={32} className="h-8 w-8 object-contain" />
+          <img src={logo} alt="Tadow logo" width={36} height={36} className="h-9 w-9 rounded-lg object-cover ring-1 ring-primary/30" />
           <span className="font-display text-xl font-semibold tracking-tight">Tadow</span>
         </Link>
         <nav className="hidden items-center gap-1 md:flex">
