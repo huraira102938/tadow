@@ -77,10 +77,10 @@ function CategoriesPage() {
         <div className="mt-16 grid gap-6 rounded-[2rem] border border-border bg-card p-10 text-center md:p-16">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">More on the way</p>
           <h3 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            Toys, sports, books, pets and travel essentials are being curated for our next chapter.
+            <span className="text-gradient">200+</span> more categories coming soon.
           </h3>
           <p className="mx-auto max-w-md text-sm text-muted-foreground">
-            We're adding categories slowly and intentionally — no clutter, only things worth your tap.
+            From toys and sports to books, pets, travel and well beyond — Tadow is growing fast, with hundreds of categories on the way.
           </p>
         </div>
       </section>
