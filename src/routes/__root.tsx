@@ -76,6 +76,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Tadow is the upcoming e-commerce app that turns shopping into a calm, curated experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Tadow — Shopping, Simplified." },
+      { name: "twitter:title", content: "Tadow — Shopping, Simplified." },
+      { property: "og:description", content: "Tadow is the upcoming e-commerce app that turns shopping into a calm, curated experience." },
+      { name: "twitter:description", content: "Tadow is the upcoming e-commerce app that turns shopping into a calm, curated experience." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/mWa643uW3ffZv7Mq2HEOHd5lR5i1/social-images/social-1778099663343-Logo.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/mWa643uW3ffZv7Mq2HEOHd5lR5i1/social-images/social-1778099663343-Logo.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
