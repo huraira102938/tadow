@@ -64,8 +64,8 @@ function AboutPage() {
             <div>
               <h3 className="font-display text-xl font-semibold">Verified & trusted</h3>
               <p className="mt-2 text-sm text-muted-foreground md:text-base">
-                Tadow operates under Starsynx (Pvt.) Ltd — the same legal entity registered with our payment partners
-                including JazzCash. If you see Starsynx on a transaction or invoice, it's us.
+                Tadow operates under Starsynx (Pvt.) Ltd — the same legal entity registered with our payment
+                partners. If you see Starsynx on a transaction or invoice, it's us.
               </p>
             </div>
           </div>
