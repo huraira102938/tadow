@@ -100,7 +100,6 @@ function FeaturesPage() {
                     <b.icon className="h-10 w-10 text-primary" />
                   </div>
                 </div>
-                <div className="absolute left-6 top-6 rounded-full bg-card/90 px-3 py-1 text-xs font-medium">Coming Soon</div>
               </div>
             </div>
           ))}

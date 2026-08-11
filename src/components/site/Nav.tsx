@@ -33,13 +33,14 @@ export function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <span className="hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-foreground sm:inline-flex">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            Coming Soon
-          </span>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.mds.tadow"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-transform hover:-translate-y-0.5 sm:inline-flex"
+          >
+            Download
+          </a>
           <button
             type="button"
             aria-label="Toggle navigation"

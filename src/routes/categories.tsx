@@ -10,9 +10,9 @@ export const Route = createFileRoute("/categories")({
   head: () => ({
     meta: [
       { title: "Categories — Tadow" },
-      { name: "description", content: "Explore the categories launching with Tadow: fashion, electronics, home & living, beauty and groceries." },
+      { name: "description", content: "Shop across categories on Tadow: fashion, electronics, home & living, beauty and groceries." },
       { property: "og:title", content: "Categories — Tadow" },
-      { property: "og:description", content: "Five thoughtfully curated categories — and many more on the way." },
+      { property: "og:description", content: "Five thoughtfully curated categories — and many more inside the app." },
     ],
   }),
   component: CategoriesPage,
@@ -33,13 +33,13 @@ function CategoriesPage() {
         <div className="absolute inset-0 bg-mesh opacity-60" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-16 md:pt-24">
           <span className="reveal inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium backdrop-blur">
-            Launch line-up
+            Shop by category
           </span>
           <h1 className="reveal reveal-delay-1 mt-6 max-w-3xl font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
             Five worlds. <em className="text-gradient not-italic">One app.</em>
           </h1>
           <p className="reveal reveal-delay-2 mt-6 max-w-xl text-lg text-muted-foreground">
-            We're launching with the categories you reach for most — each one carefully curated, never cluttered.
+            Find the categories you reach for most — each one carefully curated, never cluttered.
           </p>
         </div>
       </section>
@@ -61,9 +61,6 @@ function CategoriesPage() {
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
-                <span className="absolute right-4 top-4 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-foreground">
-                  Coming Soon
-                </span>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-background">
                   <p className="text-xs uppercase tracking-widest text-background/70">{c.tone}</p>
                   <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">{c.name}</h2>

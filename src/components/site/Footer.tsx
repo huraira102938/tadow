@@ -37,7 +37,7 @@ export function Footer() {
               <span className="font-display text-xl font-semibold">Tadow</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              A new way to shop. Discover, decide and check out — all in a single, beautifully simple app. Launching soon.
+              A new way to shop. Discover, decide and check out — all in a single, beautifully simple app. Now live on Google Play.
             </p>
             <p className="mt-4 text-sm font-medium text-primary">Deals that hit you like… TADOW!</p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
