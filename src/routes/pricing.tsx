@@ -1,5 +1,6 @@
+import type { ComponentType } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Gift, Award, Medal, Trophy, Gem } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 
 export const Route = createFileRoute("/pricing")({
@@ -18,12 +19,20 @@ export const Route = createFileRoute("/pricing")({
   component: Pricing,
 });
 
-const plans = [
+type Plan = {
+  name: string;
+  price: string;
+  tagline: string;
+  icon: ComponentType<{ className?: string }>;
+  features: string[];
+};
+
+const plans: Plan[] = [
   {
-    emoji: "🆓",
     name: "Free",
     price: "PKR 0/month",
     tagline: "Try before you commit",
+    icon: Gift,
     features: [
       "Full storefront & dashboard access",
       "Order management system",
@@ -34,10 +43,10 @@ const plans = [
     ],
   },
   {
-    emoji: "🥉",
     name: "Bronze",
     price: "PKR 599/month",
     tagline: "For home-based sellers",
+    icon: Award,
     features: [
       "Full storefront & dashboard access",
       "Order management system",
@@ -50,10 +59,10 @@ const plans = [
     ],
   },
   {
-    emoji: "🥈",
     name: "Silver",
     price: "PKR 1,499/month",
     tagline: "For growing shops & small retailers",
+    icon: Medal,
     features: [
       "Full storefront & dashboard access",
       "Order management system",
@@ -67,10 +76,10 @@ const plans = [
     ],
   },
   {
-    emoji: "🥇",
     name: "Gold",
     price: "PKR 3,499/month",
     tagline: "For established shops & active retailers",
+    icon: Trophy,
     features: [
       "Full storefront & dashboard access",
       "Order management system",
@@ -84,10 +93,10 @@ const plans = [
     ],
   },
   {
-    emoji: "💎",
     name: "Platinum",
     price: "PKR 7,999/month",
     tagline: "For established brands scaling on Tadow",
+    icon: Gem,
     features: [
       "Full storefront & dashboard access",
       "Order management system",
@@ -124,35 +133,40 @@ function Pricing() {
 
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className="flex flex-col rounded-3xl border border-border bg-card p-6 shadow-card transition-transform duration-300 hover:-translate-y-1"
-            >
-              <div className="text-3xl">{plan.emoji}</div>
-              <h2 className="mt-4 font-display text-2xl font-semibold">{plan.name}</h2>
-              <p className="mt-1 text-sm font-medium text-primary">{plan.price}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{plan.tagline}</p>
-
-              <ul className="mt-6 flex-1 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://play.google.com/store/apps/details?id=com.mds.tadow"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+          {plans.map((plan) => {
+            const Icon = plan.icon;
+            return (
+              <div
+                key={plan.name}
+                className="flex flex-col rounded-3xl border border-border bg-card p-6 shadow-card transition-transform duration-300 hover:-translate-y-1"
               >
-                Get started
-              </a>
-            </div>
-          ))}
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h2 className="mt-4 font-display text-2xl font-semibold">{plan.name}</h2>
+                <p className="mt-1 text-sm font-medium text-primary">{plan.price}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{plan.tagline}</p>
+
+                <ul className="mt-6 flex-1 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.mds.tadow"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                >
+                  Get started
+                </a>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-12 rounded-3xl border border-border bg-card/60 p-8 text-center">
