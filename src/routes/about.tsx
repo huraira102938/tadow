@@ -28,8 +28,8 @@ function AboutPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
             Tadow is a product of <strong className="text-foreground">Starsynx (Pvt.) Ltd</strong> — a registered Pakistani
-            technology company building modern digital experiences. We're crafting Tadow with care, so shopping
-            on your phone feels calm, simple and joyful.
+            technology company building modern digital experiences. Tadow is now live on Google Play, bringing calm,
+            simple and joyful shopping to your phone.
           </p>
         </div>
 

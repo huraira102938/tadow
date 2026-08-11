@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
-import { toast } from "sonner";
-import { ArrowRight, Sparkles, Zap, ShoppingBag, Star, Search, ShieldCheck, Heart } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, ShoppingBag, Star, ShieldCheck, Heart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import heroPhone from "@/assets/hero-phone.jpg";
 import catFashion from "@/assets/cat-fashion.jpg";
@@ -13,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tadow — Shopping, Simplified." },
-      { name: "description", content: "Tadow is the upcoming e-commerce app that turns shopping into a calm, curated experience. Coming soon." },
+      { name: "description", content: "Tadow is the e-commerce app that turns shopping into a calm, curated experience. Download now on Google Play." },
       { property: "og:title", content: "Tadow — Shopping, Simplified." },
-      { property: "og:description", content: "An upcoming e-commerce app built for the way you actually shop." },
+      { property: "og:description", content: "A beautifully simple shopping app, now live on Google Play." },
     ],
   }),
   component: Home,
@@ -42,24 +40,7 @@ const steps = [
   { n: "04", title: "Track & enjoy", desc: "Live order tracking from warehouse to your door." },
 ];
 
-
 function Home() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleNotify(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const value = email.trim();
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= 255;
-    if (!valid) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
-    setSubmitted(true);
-    setEmail("");
-    toast.success("You're on the list! We'll let you know when Tadow launches. 🎉");
-  }
-
   return (
     <Layout>
       {/* Hero */}
@@ -68,20 +49,24 @@ function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-16 md:grid-cols-2 md:items-center md:pt-24">
           <div>
             <span className="reveal inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5 text-primary" /> Launching soon · Join the wait
+              <Sparkles className="h-3.5 w-3.5 text-primary" /> Now live on Google Play
             </span>
             <h1 className="reveal reveal-delay-1 mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
               Shopping, <em className="text-gradient not-italic">simplified.</em>
             </h1>
             <p className="reveal reveal-delay-2 mt-6 max-w-lg text-lg text-muted-foreground">
-              Tadow is the upcoming mobile experience that puts everything you love about shopping
-              into one calm, beautifully curated app.
+              Tadow puts everything you love about shopping into one calm, beautifully curated app.
             </p>
             <div className="reveal reveal-delay-3 mt-8 flex flex-wrap items-center gap-3">
-              <button className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background shadow-soft transition-transform hover:-translate-y-0.5">
-                Coming Soon
-                <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] uppercase tracking-wider text-primary-foreground">Soon</span>
-              </button>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.mds.tadow"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background shadow-soft transition-transform hover:-translate-y-0.5"
+              >
+                Download on Google Play
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
               <Link
                 to="/features"
                 className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-colors hover:bg-secondary"
@@ -100,7 +85,7 @@ function Home() {
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_,i) => <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />)}
                 </div>
-                <p className="text-xs">12,400+ already on the waitlist</p>
+                <p className="text-xs">Loved by early shoppers</p>
               </div>
             </div>
           </div>
@@ -193,7 +178,7 @@ function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5">
                   <h3 className="font-display text-xl font-semibold text-background">{c.name}</h3>
-                  <span className="rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-foreground">Soon</span>
+                  <span className="rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-foreground">Shop</span>
                 </div>
               </div>
             ))}
@@ -215,43 +200,6 @@ function Home() {
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Testimonials section removed */}
-
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-foreground p-12 text-background md:p-20">
-          <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-primary/40 blur-3xl" aria-hidden />
-          <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-primary-glow/40 blur-3xl" aria-hidden />
-          <div className="relative max-w-2xl">
-            <Search className="mb-6 h-8 w-8 text-primary-glow" />
-            <h2 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
-              The shopping app you didn't know you needed.
-            </h2>
-            <p className="mt-4 text-base text-background/70">
-              Be the first to try Tadow when we launch. No spam, just one calm announcement.
-            </p>
-            <form onSubmit={handleNotify} className="mt-8 flex w-full max-w-md flex-col gap-2 rounded-3xl border border-background/20 bg-background/10 p-1.5 backdrop-blur sm:flex-row sm:items-center sm:rounded-full">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                maxLength={255}
-                placeholder="you@somewhere.com"
-                aria-label="Email address"
-                className="min-w-0 flex-1 rounded-full bg-transparent px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="shrink-0 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
-              >
-                {submitted ? "Thanks!" : "Notify me"}
-              </button>
-            </form>
-          </div>
         </div>
       </section>
     </Layout>
